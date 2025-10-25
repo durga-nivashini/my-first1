@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Project - Serverless Sending Application</title>
+    <script src="formToApi.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #FF6B6B;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            font-size: 1.1em;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4ECDC4;
+        }
+
+        button {
+            background: #4ECDC4;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: #36a49b;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>AWS Message Sender</h2>
+        <div>
+            <label>Message:</label>
+            <input type="text" name="message">
+        </div>
+        <div>
+            <label>Email:</label>
+            <input name="email">
+            <button onClick="formToApi(event,'email')">Send an Email</button>
+        </div>
+        <div>
+            <label>SMS:</label>
+            <input name="sms">
+            <button onClick="formToApi(event,'sms')">Send a SMS</button>
+        </div>
+    </form>
+</body>
+</html>
